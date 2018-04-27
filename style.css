@@ -1,0 +1,20 @@
+.fa-eye{
+    size: 7x;
+}
+
+#book-number{
+    width: 50%;
+}
+
+body{
+background: rgb(126, 114, 99);
+margin: 20px;
+}
+
+.books{
+    padding: 50px;
+}
+
+.book-description{
+    width: 50%;
+}
