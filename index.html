@@ -20,7 +20,15 @@
         </h1>
 
         <div class="books-go-here">
+            <script id="book-find" type="text/x-handlebars-template">
+                <h2>{{title}}</h2> 
+                <div class= 'book-description'>  {{description}}</div>  
+                <h2>Written by: {{author}} </h2>
+                <img src = {{thumbnail}}  >   
+            </script>    
+        
         </div>
+            
 
         <h2>Search by ISBN</h2>
 
@@ -31,10 +39,9 @@
 
     </div>
     
-    <script src="node_modules/jquery/dist/jquery.js">
-    </script>
-    <script src="script.js">
-    </script>
+    <script src="node_modules/jquery/dist/jquery.js"> </script>
+    <script src="node_modules/handlebars/dist/handlebars.js"> </script>
+    <script src="script.js"> </script>
 </body>
 
 </html>

@@ -14,18 +14,23 @@ const fetch = (isbn) => {
 }
 
 var newBook = (book) => {
-    var title = book.items[0].volumeInfo.title;
-    var description = book.items[0].volumeInfo.description;
-    var author = book.items[0].volumeInfo.authors[0];
-    var thumbnail = book.items[0].volumeInfo.imageLinks.thumbnail;
+    var bookObj = {};
+    bookObj.title = book.items[0].volumeInfo.title;
+    bookObj.description = book.items[0].volumeInfo.description;
+    bookObj.author = book.items[0].volumeInfo.authors[0];
+    bookObj.thumbnail = book.items[0].volumeInfo.imageLinks.thumbnail;
+
+   
     //console.log(book.items[0].volumeInfo.imageLinks.thumbnail);
-    var newBookData = "<h2>" + title + "</h2>" +
-                      "<div class= 'book-description'>" + description + "</div>" + 
-                      "<h2>Written by: " + author + "</h2>" +
-                      "<img src =" + thumbnail + ">";   
-
-$(".books-go-here").append(newBookData);
-
+   // var newBookData = "<h2>" + title + "</h2>" +
+                     // "<div class= 'book-description'>" + description + "</div>" + 
+                     // "<h2>Written by: " + author + "</h2>" +
+                    //  "<img src =" + thumbnail + ">";   
+//$(".books-go-here").append(newBookData);
+var template = $('#book-find').html();
+var templateScript = Handlebars.compile(template);
+var html = templateScript(bookObj);
+$(".books-go-here").append(html);
 }
 
 $("#booksisbn").click( function() {
