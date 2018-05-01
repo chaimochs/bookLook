@@ -1,6 +1,6 @@
-const fetch = (isbn) => {
-    var ISBN = $(isbn).parent().find("#book-number").val();
-    var url = "https://www.googleapis.com/books/v1/volumes?q=isbn:" + ISBN;
+const fetch = (book) => {
+    var BOOK = $(book).parent().find("#book-number").val();
+    var url = "https://www.googleapis.com/books/v1/volumes?q=" + BOOK;
     $.ajax({
         method: "GET",
         url: url,
